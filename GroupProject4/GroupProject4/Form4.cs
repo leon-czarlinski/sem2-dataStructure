@@ -10,20 +10,19 @@ using System.Windows.Forms;
 
 namespace GroupProject4
 {
-    public partial class Form1 : Form
+    public partial class Form4 : Form
     {
-        Form2 form2;
-        public Form1()
+        Form3 form3;
+        public Form4(Form3 form3)
         {
             InitializeComponent();
-            form2 = new Form2(this);
+            this.form3 = form3;
         }
 
-        private void btn_form2_Click(object sender, EventArgs e)
+        private void btn_form3_Click(object sender, EventArgs e)
         {
-            form2.Show();
+            form3.Show();
             this.Hide();
-
         }
     }
 }

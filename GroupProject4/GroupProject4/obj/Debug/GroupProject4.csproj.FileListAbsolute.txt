@@ -1,0 +1,14 @@
+C:\Users\leonv\OneDrive\HUMBER\2ndSemester\ITE5231DataStructuresDesignPatterns\sem2-dataStructure\GroupProject4\GroupProject4\bin\Debug\GroupProject4.exe.config
+C:\Users\leonv\OneDrive\HUMBER\2ndSemester\ITE5231DataStructuresDesignPatterns\sem2-dataStructure\GroupProject4\GroupProject4\bin\Debug\GroupProject4.exe
+C:\Users\leonv\OneDrive\HUMBER\2ndSemester\ITE5231DataStructuresDesignPatterns\sem2-dataStructure\GroupProject4\GroupProject4\bin\Debug\GroupProject4.pdb
+C:\Users\leonv\OneDrive\HUMBER\2ndSemester\ITE5231DataStructuresDesignPatterns\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.csproj.AssemblyReference.cache
+C:\Users\leonv\OneDrive\HUMBER\2ndSemester\ITE5231DataStructuresDesignPatterns\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.csproj.SuggestedBindingRedirects.cache
+C:\Users\leonv\OneDrive\HUMBER\2ndSemester\ITE5231DataStructuresDesignPatterns\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.Form1.resources
+C:\Users\leonv\OneDrive\HUMBER\2ndSemester\ITE5231DataStructuresDesignPatterns\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.Properties.Resources.resources
+C:\Users\leonv\OneDrive\HUMBER\2ndSemester\ITE5231DataStructuresDesignPatterns\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.csproj.GenerateResource.cache
+C:\Users\leonv\OneDrive\HUMBER\2ndSemester\ITE5231DataStructuresDesignPatterns\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.csproj.CoreCompileInputs.cache
+C:\Users\leonv\OneDrive\HUMBER\2ndSemester\ITE5231DataStructuresDesignPatterns\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.exe
+C:\Users\leonv\OneDrive\HUMBER\2ndSemester\ITE5231DataStructuresDesignPatterns\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.pdb
+C:\Users\leonv\OneDrive\HUMBER\2ndSemester\ITE5231DataStructuresDesignPatterns\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.Form2.resources
+C:\Users\leonv\OneDrive\HUMBER\2ndSemester\ITE5231DataStructuresDesignPatterns\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.Form3.resources
+C:\Users\leonv\OneDrive\HUMBER\2ndSemester\ITE5231DataStructuresDesignPatterns\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.Form4.resources

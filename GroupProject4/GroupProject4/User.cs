@@ -8,7 +8,6 @@ namespace GroupProject4
 {
     public class User : IComparable<User>
     {
-
         public User (int id, string firstName, string lastName, string email, string phone)
         {
             UserId = id;

@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace GroupProject4
 {
-    public class Book 
+    public class Book : IComparable<Book>
     {
-        public Book (int id, string title, int year, string author, string category)
+        public Book (int id, string title, int year, string author, double price)
         {
             BookId = id;
             BookTitle = title;
             BookYear = year;
             BookAuthor = author;
-            BookCategory = category;
+            BookPrice = price;
         }
 
         public int BookId { get; set; }
         public string BookTitle { get; set; }
         public int BookYear { get; set; }
         public string BookAuthor { get; set; }
-        public string BookCategory { get; set; }
+        public double BookPrice { get; set; }
 
         public int CompareTo (Book other)
         {
