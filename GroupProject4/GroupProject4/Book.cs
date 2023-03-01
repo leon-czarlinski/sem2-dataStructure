@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace GroupProject4
 {
@@ -26,6 +27,11 @@ namespace GroupProject4
         public int CompareTo (Book other)
         {
             return this.BookId.CompareTo (other.BookId);
+        }
+
+        public override string ToString()
+        {
+            return $"{BookId}: {BookTitle}, {BookYear}, {BookAuthor}. Price: ${BookPrice}";
         }
 
     }

@@ -44,7 +44,7 @@
             this.txt_email = new System.Windows.Forms.TextBox();
             this.txt_phone = new System.Windows.Forms.TextBox();
             this.txt_userID = new System.Windows.Forms.TextBox();
-            this.lbx_user = new System.Windows.Forms.ListBox();
+            this.lbx_display = new System.Windows.Forms.ListBox();
             this.lbl_book = new System.Windows.Forms.Label();
             this.lbl_bookID = new System.Windows.Forms.Label();
             this.lbl_title = new System.Windows.Forms.Label();
@@ -61,24 +61,22 @@
             this.btn_displayBook = new System.Windows.Forms.Button();
             this.btn_clearBook = new System.Windows.Forms.Button();
             this.lbl_errorBook = new System.Windows.Forms.Label();
-            this.lbx_book = new System.Windows.Forms.ListBox();
             this.lbl_category = new System.Windows.Forms.Label();
             this.lbl_catName = new System.Windows.Forms.Label();
             this.lbl_catDesc = new System.Windows.Forms.Label();
             this.lbl_catType = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_categoryID = new System.Windows.Forms.Label();
+            this.lbl_catDisplayName = new System.Windows.Forms.Label();
             this.lbl_errorCat = new System.Windows.Forms.Label();
             this.txt_catName = new System.Windows.Forms.TextBox();
             this.txt_catDesc = new System.Windows.Forms.TextBox();
             this.txt_catType = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_categoryID = new System.Windows.Forms.TextBox();
+            this.txt_catDisplayName = new System.Windows.Forms.TextBox();
             this.btn_addCat = new System.Windows.Forms.Button();
             this.btn_removeCat = new System.Windows.Forms.Button();
             this.btn_displayCat = new System.Windows.Forms.Button();
             this.btn_clearCat = new System.Windows.Forms.Button();
-            this.lbx_category = new System.Windows.Forms.ListBox();
             this.btn_form2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -130,11 +128,11 @@
             // lbl_errorUser
             // 
             this.lbl_errorUser.AutoSize = true;
-            this.lbl_errorUser.Location = new System.Drawing.Point(200, 541);
+            this.lbl_errorUser.Location = new System.Drawing.Point(431, 628);
             this.lbl_errorUser.Name = "lbl_errorUser";
-            this.lbl_errorUser.Size = new System.Drawing.Size(26, 25);
+            this.lbl_errorUser.Size = new System.Drawing.Size(201, 25);
             this.lbl_errorUser.TabIndex = 5;
-            this.lbl_errorUser.Text = "\"\"";
+            this.lbl_errorUser.Text = "Error message here";
             // 
             // lbl_User
             // 
@@ -153,6 +151,7 @@
             this.btn_AddUser.TabIndex = 7;
             this.btn_AddUser.Text = "Add";
             this.btn_AddUser.UseVisualStyleBackColor = true;
+            this.btn_AddUser.Click += new System.EventHandler(this.btn_AddUser_Click);
             // 
             // btn_removeUser
             // 
@@ -162,6 +161,7 @@
             this.btn_removeUser.TabIndex = 8;
             this.btn_removeUser.Text = "Remove";
             this.btn_removeUser.UseVisualStyleBackColor = true;
+            this.btn_removeUser.Click += new System.EventHandler(this.btn_removeUser_Click);
             // 
             // btn_clearUser
             // 
@@ -171,6 +171,7 @@
             this.btn_clearUser.TabIndex = 9;
             this.btn_clearUser.Text = "Clear";
             this.btn_clearUser.UseVisualStyleBackColor = true;
+            this.btn_clearUser.Click += new System.EventHandler(this.btn_clearUser_Click);
             // 
             // btn_displayUser
             // 
@@ -180,6 +181,7 @@
             this.btn_displayUser.TabIndex = 10;
             this.btn_displayUser.Text = "Display";
             this.btn_displayUser.UseVisualStyleBackColor = true;
+            this.btn_displayUser.Click += new System.EventHandler(this.btn_displayUser_Click);
             // 
             // txt_firstName
             // 
@@ -216,14 +218,15 @@
             this.txt_userID.Size = new System.Drawing.Size(292, 31);
             this.txt_userID.TabIndex = 15;
             // 
-            // lbx_user
+            // lbx_display
             // 
-            this.lbx_user.FormattingEnabled = true;
-            this.lbx_user.ItemHeight = 25;
-            this.lbx_user.Location = new System.Drawing.Point(44, 604);
-            this.lbx_user.Name = "lbx_user";
-            this.lbx_user.Size = new System.Drawing.Size(436, 229);
-            this.lbx_user.TabIndex = 16;
+            this.lbx_display.FormattingEnabled = true;
+            this.lbx_display.HorizontalScrollbar = true;
+            this.lbx_display.ItemHeight = 25;
+            this.lbx_display.Location = new System.Drawing.Point(59, 667);
+            this.lbx_display.Name = "lbx_display";
+            this.lbx_display.Size = new System.Drawing.Size(1028, 229);
+            this.lbx_display.TabIndex = 16;
             // 
             // lbl_book
             // 
@@ -322,6 +325,7 @@
             this.btn_AddBook.TabIndex = 28;
             this.btn_AddBook.Text = "Add";
             this.btn_AddBook.UseVisualStyleBackColor = true;
+            this.btn_AddBook.Click += new System.EventHandler(this.btn_AddBook_Click);
             // 
             // btn_removeBook
             // 
@@ -331,6 +335,7 @@
             this.btn_removeBook.TabIndex = 29;
             this.btn_removeBook.Text = "Remove";
             this.btn_removeBook.UseVisualStyleBackColor = true;
+            this.btn_removeBook.Click += new System.EventHandler(this.btn_removeBook_Click);
             // 
             // btn_displayBook
             // 
@@ -340,6 +345,7 @@
             this.btn_displayBook.TabIndex = 30;
             this.btn_displayBook.Text = "Display";
             this.btn_displayBook.UseVisualStyleBackColor = true;
+            this.btn_displayBook.Click += new System.EventHandler(this.btn_displayBook_Click);
             // 
             // btn_clearBook
             // 
@@ -349,24 +355,15 @@
             this.btn_clearBook.TabIndex = 31;
             this.btn_clearBook.Text = "Clear";
             this.btn_clearBook.UseVisualStyleBackColor = true;
+            this.btn_clearBook.Click += new System.EventHandler(this.btn_clearBook_Click);
             // 
             // lbl_errorBook
             // 
             this.lbl_errorBook.AutoSize = true;
             this.lbl_errorBook.Location = new System.Drawing.Point(680, 541);
             this.lbl_errorBook.Name = "lbl_errorBook";
-            this.lbl_errorBook.Size = new System.Drawing.Size(26, 25);
+            this.lbl_errorBook.Size = new System.Drawing.Size(0, 25);
             this.lbl_errorBook.TabIndex = 32;
-            this.lbl_errorBook.Text = "\"\"";
-            // 
-            // lbx_book
-            // 
-            this.lbx_book.FormattingEnabled = true;
-            this.lbx_book.ItemHeight = 25;
-            this.lbx_book.Location = new System.Drawing.Point(536, 604);
-            this.lbx_book.Name = "lbx_book";
-            this.lbx_book.Size = new System.Drawing.Size(436, 229);
-            this.lbx_book.TabIndex = 33;
             // 
             // lbl_category
             // 
@@ -380,7 +377,7 @@
             // lbl_catName
             // 
             this.lbl_catName.AutoSize = true;
-            this.lbl_catName.Location = new System.Drawing.Point(1038, 129);
+            this.lbl_catName.Location = new System.Drawing.Point(1040, 196);
             this.lbl_catName.Name = "lbl_catName";
             this.lbl_catName.Size = new System.Drawing.Size(68, 25);
             this.lbl_catName.TabIndex = 35;
@@ -389,7 +386,7 @@
             // lbl_catDesc
             // 
             this.lbl_catDesc.AutoSize = true;
-            this.lbl_catDesc.Location = new System.Drawing.Point(1036, 196);
+            this.lbl_catDesc.Location = new System.Drawing.Point(1038, 263);
             this.lbl_catDesc.Name = "lbl_catDesc";
             this.lbl_catDesc.Size = new System.Drawing.Size(120, 25);
             this.lbl_catDesc.TabIndex = 36;
@@ -398,73 +395,72 @@
             // lbl_catType
             // 
             this.lbl_catType.AutoSize = true;
-            this.lbl_catType.Location = new System.Drawing.Point(1036, 258);
+            this.lbl_catType.Location = new System.Drawing.Point(1038, 325);
             this.lbl_catType.Name = "lbl_catType";
             this.lbl_catType.Size = new System.Drawing.Size(60, 25);
             this.lbl_catType.TabIndex = 37;
             this.lbl_catType.Text = "Type";
             // 
-            // label4
+            // lbl_categoryID
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1036, 322);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 25);
-            this.label4.TabIndex = 38;
-            this.label4.Text = "label4";
+            this.lbl_categoryID.AutoSize = true;
+            this.lbl_categoryID.Location = new System.Drawing.Point(1038, 132);
+            this.lbl_categoryID.Name = "lbl_categoryID";
+            this.lbl_categoryID.Size = new System.Drawing.Size(125, 25);
+            this.lbl_categoryID.TabIndex = 38;
+            this.lbl_categoryID.Text = "Category ID";
             // 
-            // label5
+            // lbl_catDisplayName
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1036, 389);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 25);
-            this.label5.TabIndex = 39;
-            this.label5.Text = "label5";
+            this.lbl_catDisplayName.AutoSize = true;
+            this.lbl_catDisplayName.Location = new System.Drawing.Point(1036, 389);
+            this.lbl_catDisplayName.Name = "lbl_catDisplayName";
+            this.lbl_catDisplayName.Size = new System.Drawing.Size(74, 25);
+            this.lbl_catDisplayName.TabIndex = 39;
+            this.lbl_catDisplayName.Text = "Abrev.";
             // 
             // lbl_errorCat
             // 
             this.lbl_errorCat.AutoSize = true;
             this.lbl_errorCat.Location = new System.Drawing.Point(1196, 541);
             this.lbl_errorCat.Name = "lbl_errorCat";
-            this.lbl_errorCat.Size = new System.Drawing.Size(26, 25);
+            this.lbl_errorCat.Size = new System.Drawing.Size(0, 25);
             this.lbl_errorCat.TabIndex = 40;
-            this.lbl_errorCat.Text = "\"\"";
             // 
             // txt_catName
             // 
-            this.txt_catName.Location = new System.Drawing.Point(1185, 126);
+            this.txt_catName.Location = new System.Drawing.Point(1187, 193);
             this.txt_catName.Name = "txt_catName";
             this.txt_catName.Size = new System.Drawing.Size(292, 31);
             this.txt_catName.TabIndex = 41;
             // 
             // txt_catDesc
             // 
-            this.txt_catDesc.Location = new System.Drawing.Point(1185, 189);
+            this.txt_catDesc.Location = new System.Drawing.Point(1187, 256);
             this.txt_catDesc.Name = "txt_catDesc";
             this.txt_catDesc.Size = new System.Drawing.Size(292, 31);
             this.txt_catDesc.TabIndex = 42;
             // 
             // txt_catType
             // 
-            this.txt_catType.Location = new System.Drawing.Point(1185, 258);
+            this.txt_catType.Location = new System.Drawing.Point(1187, 325);
             this.txt_catType.Name = "txt_catType";
             this.txt_catType.Size = new System.Drawing.Size(292, 31);
             this.txt_catType.TabIndex = 43;
             // 
-            // textBox4
+            // txt_categoryID
             // 
-            this.textBox4.Location = new System.Drawing.Point(1185, 322);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(292, 31);
-            this.textBox4.TabIndex = 44;
+            this.txt_categoryID.Location = new System.Drawing.Point(1187, 132);
+            this.txt_categoryID.Name = "txt_categoryID";
+            this.txt_categoryID.Size = new System.Drawing.Size(292, 31);
+            this.txt_categoryID.TabIndex = 44;
             // 
-            // textBox5
+            // txt_catDisplayName
             // 
-            this.textBox5.Location = new System.Drawing.Point(1185, 386);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(292, 31);
-            this.textBox5.TabIndex = 45;
+            this.txt_catDisplayName.Location = new System.Drawing.Point(1185, 386);
+            this.txt_catDisplayName.Name = "txt_catDisplayName";
+            this.txt_catDisplayName.Size = new System.Drawing.Size(292, 31);
+            this.txt_catDisplayName.TabIndex = 45;
             // 
             // btn_addCat
             // 
@@ -474,6 +470,7 @@
             this.btn_addCat.TabIndex = 46;
             this.btn_addCat.Text = "Add";
             this.btn_addCat.UseVisualStyleBackColor = true;
+            this.btn_addCat.Click += new System.EventHandler(this.btn_addCat_Click);
             // 
             // btn_removeCat
             // 
@@ -483,6 +480,7 @@
             this.btn_removeCat.TabIndex = 47;
             this.btn_removeCat.Text = "Remove";
             this.btn_removeCat.UseVisualStyleBackColor = true;
+            this.btn_removeCat.Click += new System.EventHandler(this.btn_removeCat_Click);
             // 
             // btn_displayCat
             // 
@@ -492,6 +490,7 @@
             this.btn_displayCat.TabIndex = 48;
             this.btn_displayCat.Text = "Display";
             this.btn_displayCat.UseVisualStyleBackColor = true;
+            this.btn_displayCat.Click += new System.EventHandler(this.btn_displayCat_Click);
             // 
             // btn_clearCat
             // 
@@ -501,15 +500,7 @@
             this.btn_clearCat.TabIndex = 49;
             this.btn_clearCat.Text = "Clear";
             this.btn_clearCat.UseVisualStyleBackColor = true;
-            // 
-            // lbx_category
-            // 
-            this.lbx_category.FormattingEnabled = true;
-            this.lbx_category.ItemHeight = 25;
-            this.lbx_category.Location = new System.Drawing.Point(1043, 604);
-            this.lbx_category.Name = "lbx_category";
-            this.lbx_category.Size = new System.Drawing.Size(434, 229);
-            this.lbx_category.TabIndex = 50;
+            this.btn_clearCat.Click += new System.EventHandler(this.btn_clearCat_Click);
             // 
             // btn_form2
             // 
@@ -527,24 +518,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1555, 928);
             this.Controls.Add(this.btn_form2);
-            this.Controls.Add(this.lbx_category);
             this.Controls.Add(this.btn_clearCat);
             this.Controls.Add(this.btn_displayCat);
             this.Controls.Add(this.btn_removeCat);
             this.Controls.Add(this.btn_addCat);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txt_catDisplayName);
+            this.Controls.Add(this.txt_categoryID);
             this.Controls.Add(this.txt_catType);
             this.Controls.Add(this.txt_catDesc);
             this.Controls.Add(this.txt_catName);
             this.Controls.Add(this.lbl_errorCat);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lbl_catDisplayName);
+            this.Controls.Add(this.lbl_categoryID);
             this.Controls.Add(this.lbl_catType);
             this.Controls.Add(this.lbl_catDesc);
             this.Controls.Add(this.lbl_catName);
             this.Controls.Add(this.lbl_category);
-            this.Controls.Add(this.lbx_book);
             this.Controls.Add(this.lbl_errorBook);
             this.Controls.Add(this.btn_clearBook);
             this.Controls.Add(this.btn_displayBook);
@@ -561,7 +550,7 @@
             this.Controls.Add(this.lbl_title);
             this.Controls.Add(this.lbl_bookID);
             this.Controls.Add(this.lbl_book);
-            this.Controls.Add(this.lbx_user);
+            this.Controls.Add(this.lbx_display);
             this.Controls.Add(this.txt_userID);
             this.Controls.Add(this.txt_phone);
             this.Controls.Add(this.txt_email);
@@ -603,7 +592,7 @@
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.TextBox txt_phone;
         private System.Windows.Forms.TextBox txt_userID;
-        private System.Windows.Forms.ListBox lbx_user;
+        private System.Windows.Forms.ListBox lbx_display;
         private System.Windows.Forms.Label lbl_book;
         private System.Windows.Forms.Label lbl_bookID;
         private System.Windows.Forms.Label lbl_title;
@@ -620,24 +609,22 @@
         private System.Windows.Forms.Button btn_displayBook;
         private System.Windows.Forms.Button btn_clearBook;
         private System.Windows.Forms.Label lbl_errorBook;
-        private System.Windows.Forms.ListBox lbx_book;
         private System.Windows.Forms.Label lbl_category;
         private System.Windows.Forms.Label lbl_catName;
         private System.Windows.Forms.Label lbl_catDesc;
         private System.Windows.Forms.Label lbl_catType;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_categoryID;
+        private System.Windows.Forms.Label lbl_catDisplayName;
         private System.Windows.Forms.Label lbl_errorCat;
         private System.Windows.Forms.TextBox txt_catName;
         private System.Windows.Forms.TextBox txt_catDesc;
         private System.Windows.Forms.TextBox txt_catType;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt_categoryID;
+        private System.Windows.Forms.TextBox txt_catDisplayName;
         private System.Windows.Forms.Button btn_addCat;
         private System.Windows.Forms.Button btn_removeCat;
         private System.Windows.Forms.Button btn_displayCat;
         private System.Windows.Forms.Button btn_clearCat;
-        private System.Windows.Forms.ListBox lbx_category;
         private System.Windows.Forms.Button btn_form2;
     }
 }

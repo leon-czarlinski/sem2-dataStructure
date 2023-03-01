@@ -30,5 +30,10 @@ namespace GroupProject4
         {
             return this.UserId.CompareTo(other.UserId);
         }
+
+        public override string ToString()
+        {
+            return $"{UserId}: {UserFirstName} {UserLastName}, email: {UserEmail}, phone: {UserPhone}";
+        }
     }
 }
