@@ -36,10 +36,10 @@ namespace GroupProject4
 
         private void populateData()
         {
-            tbx_userid.Text = this.user.UserId.ToString();
-            tbx_username.Text = this.user.UserFirstName + " " + this.user.UserLastName;
-            tbx_useremail.Text = this.user.UserEmail;
-            tbx_userphone.Text = this.user.UserPhone;
+            //tbx_userid.Text = this.user.UserId.ToString();
+            //tbx_username.Text = this.user.UserFirstName + " " + this.user.UserLastName;
+            //tbx_useremail.Text = this.user.UserEmail;
+            //tbx_userphone.Text = this.user.UserPhone;
         }
 
         private void btn_form1_Click(object sender, EventArgs e)

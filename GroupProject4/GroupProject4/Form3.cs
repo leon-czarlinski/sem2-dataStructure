@@ -34,9 +34,9 @@ namespace GroupProject4
 
         private void populateData()
         {
-            tbx_categoryid.Text = this.category.CategoryID.ToString();
-            tbx_name.Text = this.category.CategoryName;
-            tbx_description.Text = this.category.CategoryDescription;
+            //tbx_categoryid.Text = this.category.CategoryID.ToString();
+            //tbx_name.Text = this.category.CategoryName;
+            //tbx_description.Text = this.category.CategoryDescription;
         }
 
         private void btn_form2_Click(object sender, EventArgs e)
