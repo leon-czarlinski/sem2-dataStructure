@@ -15,6 +15,7 @@ namespace GroupProject4
             UserLastName = lastName;
             UserEmail = email;
             UserPhone = phone;
+            BorrowedBooks = new List<Book>();
         }
 
         public int UserId { get; set; }
@@ -25,6 +26,13 @@ namespace GroupProject4
         public string UserEmail { get; set; }
 
         public string UserPhone { get; set; }
+
+        public List<Book> BorrowedBooks { get; }
+
+        public void addBooks(Book book)
+        {
+            this.BorrowedBooks.Add(book);
+        }
 
         public int CompareTo(User other)
         {

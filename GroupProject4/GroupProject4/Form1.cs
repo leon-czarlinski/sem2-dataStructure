@@ -27,9 +27,20 @@ namespace GroupProject4
 
         private void btn_form2_Click(object sender, EventArgs e)
         {
-            form2.Show();
-            this.Hide();
-
+            Object selectedItem = lbx_display.SelectedItem;
+            if (selectedItem == null) return;
+            if (selectedItem.GetType().Equals(typeof(User)))
+            {
+                User selectedUser = (User) selectedItem;
+                this.form2.Show(selectedUser, books);
+                this.Hide();
+            } else if (selectedItem.GetType().Equals(typeof(Book)))
+            {
+                // open form4 passing book
+            } else if(selectedItem.GetType().Equals(typeof(Category)))
+            {
+                // open form3 passing category
+            }
         }
 
         private void btn_AddUser_Click(object sender, EventArgs e)
@@ -44,7 +55,7 @@ namespace GroupProject4
             }
 
             int userID;
-            if(!Int32.TryParse(txt_userID.Text, out userID))
+            if (!Int32.TryParse(txt_userID.Text, out userID))
             {
                 lbl_errorUser.Text = "Invalid user ID format";
                 return;
@@ -61,7 +72,8 @@ namespace GroupProject4
                 txt_email.Clear();
                 txt_phone.Clear();
                 lbl_errorUser.Text = "User added with success";
-            } else
+            }
+            else
             {
                 lbl_errorUser.Text = "User already exists.";
             }
@@ -70,7 +82,7 @@ namespace GroupProject4
         private void btn_removeUser_Click(object sender, EventArgs e)
         {
             lbl_errorUser.Text = "";
-            if(users.Count > 0)
+            if (users.Count > 0)
             {
                 if (txt_userID.Text != "")
                 {
@@ -102,7 +114,8 @@ namespace GroupProject4
                 {
                     lbl_errorUser.Text = "Please, insert an ID";
                 }
-            } else
+            }
+            else
             {
                 lbl_errorUser.Text = "Empty list. No users to remove";
             }
@@ -113,9 +126,9 @@ namespace GroupProject4
         {
             lbl_errorUser.Text = "";
             lbx_display.Items.Clear();
-            if(users.Count > 0)
+            if (users.Count > 0)
             {
-                if(txt_userID.Text == "")
+                if (txt_userID.Text == "")
                 {
                     lbx_display.Items.Clear();
                     foreach (User u in users)
@@ -143,11 +156,13 @@ namespace GroupProject4
                     {
                         lbl_errorUser.Text = "User ID not found";
                     }
-                } else
+                }
+                else
                 {
                     lbl_errorUser.Text = "No users to display";
                 }
-            } else
+            }
+            else
             {
                 lbl_errorUser.Text = "No users to display";
             }
