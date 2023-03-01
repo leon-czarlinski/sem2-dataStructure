@@ -13,14 +13,14 @@ namespace GroupProject4
     public partial class Form1 : Form
     {
         Form2 form2;
-        SortedSet<User> users;
+        HashSet<User> users;
         SortedSet<Book> books;
         SortedSet<Category> categories;
         public Form1()
         {
             InitializeComponent();
             form2 = new Form2(this);
-            users = new SortedSet<User>();
+            users = new HashSet<User>(new UserComparator());
             books = new SortedSet<Book>();
             categories = new SortedSet<Category>();
         }

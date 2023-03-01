@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace GroupProject4
 {
-    public class User : IComparable<User>
+    public class User 
     {
-        public User (int id, string firstName, string lastName, string email, string phone)
+        public User(int id, string firstName, string lastName, string email, string phone)
         {
             UserId = id;
             UserFirstName = firstName;
@@ -29,14 +29,12 @@ namespace GroupProject4
 
         public List<Book> BorrowedBooks { get; }
 
-        public void addBooks(Book book)
+        public void AddBooks(Book book)
         {
-            this.BorrowedBooks.Add(book);
-        }
-
-        public int CompareTo(User other)
-        {
-            return this.UserId.CompareTo(other.UserId);
+            if (!BorrowedBooks.Contains(book))
+            {
+                this.BorrowedBooks.Add(book);
+            }
         }
 
         public override string ToString()
