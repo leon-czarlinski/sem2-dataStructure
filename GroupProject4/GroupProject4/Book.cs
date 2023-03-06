@@ -7,7 +7,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace GroupProject4
 {
-    public class Book : IComparable<Book>
+    public class Book
     {
         public Book (int id, string title, int year, string author, double price)
         {
@@ -23,11 +23,6 @@ namespace GroupProject4
         public int BookYear { get; set; }
         public string BookAuthor { get; set; }
         public double BookPrice { get; set; }
-
-        public int CompareTo (Book other)
-        {
-            return this.BookId.CompareTo (other.BookId);
-        }
 
         public override string ToString()
         {

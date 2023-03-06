@@ -15,7 +15,7 @@ namespace GroupProject4
 
         int IEqualityComparer<User>.GetHashCode(User obj)
         {
-            return obj.GetHashCode();
+            return obj.UserId.GetHashCode();
         }
     }
 }

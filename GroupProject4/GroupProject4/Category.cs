@@ -31,6 +31,7 @@ namespace GroupProject4
         {
             return string.Compare(this.CategoryName, other.CategoryName, StringComparison.OrdinalIgnoreCase);
         }
+
         public override string ToString()
         {
             return $"{CategoryID}: {CategoryName}, {CategoryDescription}, {CategoryType}. Abrev: {CategoryDisplayName}";

@@ -14,14 +14,14 @@ namespace GroupProject4
     {
         Form2 form2;
         HashSet<User> users;
-        SortedSet<Book> books;
+        HashSet<Book> books;
         SortedSet<Category> categories;
         public Form1()
         {
             InitializeComponent();
             form2 = new Form2(this);
             users = new HashSet<User>(new UserComparator());
-            books = new SortedSet<Book>();
+            books = new HashSet<Book>(new BookComparator());
             categories = new SortedSet<Category>();
         }
 
@@ -215,7 +215,8 @@ namespace GroupProject4
                 return;
             }
 
-            Book newbook = new Book(bookID, txt_title.Text, year, txt_author.Text, price);
+            Book newbook = new Book(Int32.Parse(txt_bookID.Text), txt_title.Text, Int32.Parse(txt_year.Text), txt_author.Text, 
+                                    double.Parse(txt_price.Text));
 
             if (!books.Contains(newbook))
             {
