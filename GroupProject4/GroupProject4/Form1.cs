@@ -22,7 +22,7 @@ namespace GroupProject4
             form2 = new Form2(this);
             users = new HashSet<User>(new UserComparator());
             books = new HashSet<Book>(new BookComparator());
-            categories = new SortedSet<Category>();
+            categories = new SortedSet<Category>(new CategoryComparator());
         }
 
         private void btn_form2_Click(object sender, EventArgs e)

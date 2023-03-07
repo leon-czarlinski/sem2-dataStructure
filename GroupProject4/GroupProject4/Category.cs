@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace GroupProject4
 {
-    public class Category : IComparable<Category>
+    public class Category
     {               
         public Category (int categoryID, string categoryName, string description, string type, string displayName)
         {
@@ -26,11 +26,6 @@ namespace GroupProject4
         public string CategoryDescription { get; set; }
         public string CategoryType { get; set; }
         public string CategoryDisplayName { get; set; }
-
-        public int CompareTo(Category other)
-        {
-            return string.Compare(this.CategoryName, other.CategoryName, StringComparison.OrdinalIgnoreCase);
-        }
 
         public override string ToString()
         {
