@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GroupProject4
 {
-    public class User 
+    public class User
     {
         public User(int id, string firstName, string lastName, string email, string phone)
         {
@@ -29,17 +29,30 @@ namespace GroupProject4
 
         public List<Book> BorrowedBooks { get; }
 
-        public void AddBooks(Book book)
+        public void AddBook(Book book)
         {
-            if (!BorrowedBooks.Contains(book))
+            if (book != null && !BorrowedBooks.Contains(book))
             {
                 this.BorrowedBooks.Add(book);
+            }
+        }
+        public void RemoveBook(Book book)
+        {
+            if (book != null && BorrowedBooks.Contains(book))
+            {
+                this.BorrowedBooks.Remove(book);
             }
         }
 
         public override string ToString()
         {
             return $"{UserId}: {UserFirstName} {UserLastName}, email: {UserEmail}, phone: {UserPhone}";
+        }
+
+        public override bool Equals(object obj)
+        {
+            User other = (User)obj;
+            return this.UserId.Equals(other.UserId);
         }
     }
 }

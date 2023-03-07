@@ -16,6 +16,8 @@ namespace GroupProject4
             BookYear = year;
             BookAuthor = author;
             BookPrice = price;
+            Category = null;
+            BorrowedBy = null;
         }
 
         public int BookId { get; set; }
@@ -23,6 +25,8 @@ namespace GroupProject4
         public int BookYear { get; set; }
         public string BookAuthor { get; set; }
         public double BookPrice { get; set; }
+        public Category Category { get; set; }
+        public User BorrowedBy { get; set; }
 
         public override string ToString()
         {

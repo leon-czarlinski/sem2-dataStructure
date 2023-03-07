@@ -12,43 +12,142 @@ namespace GroupProject4
 {
     public partial class Form3 : Form
     {
-        Category category;
-        SortedSet<Book> books;
+        SortedSet<Category> categories;
+        HashSet<Book> books;
+        Category currentCategory;
 
-        Form2 form2;
-        Form4 form4;
-        public Form3(Form2 form2)
+        Form1 form1;
+        public Form3(Form1 form1)
         {
             InitializeComponent();
-            this.form2 = form2;
-            form4 = new Form4(this);
+            this.form1 = form1;
         }
 
-        public void Show(Category category, SortedSet<Book> books)
+        public void Show(SortedSet<Category> categories, HashSet<Book> books)
         {
-            this.category = category;
+            this.categories = categories;
             this.books = books;
-            this.populateData();
             this.Show();
         }
 
-        private void populateData()
+        private void btn_GoBack_Click(object sender, EventArgs e)
         {
-            //tbx_categoryid.Text = this.category.CategoryID.ToString();
-            //tbx_name.Text = this.category.CategoryName;
-            //tbx_description.Text = this.category.CategoryDescription;
+            this.form1.Show();
+            this.Hide();
+            this.clearAll();
         }
 
-        private void btn_form2_Click(object sender, EventArgs e)
+        private void btn_Search_Click(object sender, EventArgs e)
         {
-            form2.Show();
-            this.Hide();
+            String categoryName = tbx_name.Text.Trim();
+            if (categoryName.Equals(""))
+            {
+                lbl_SearchError.Text = "Please provide the category name";
+                tbx_name.Focus();
+                return;
+            }
+            this.currentCategory = this.findCategoryByName(categoryName);
+            if (this.currentCategory == null)
+            {
+                lbl_SearchError.Text = "Category with name " + categoryName + " not found";
+                tbx_name.Focus();
+                return;
+            }
+            tbx_categoryid.Text = "" + this.currentCategory.CategoryID;
+            tbx_description.Text = this.currentCategory.CategoryDescription;
+            this.populateAssignedBooks();
+            this.populateUnassignedBooks();
+            lbl_SearchError.Text = "";
         }
 
-        private void btn_form4_Click(object sender, EventArgs e)
+        private void btn_assigned_book_Click(object sender, EventArgs e)
         {
-            form4.Show();
-            this.Hide();
+            if (this.currentCategory == null)
+            {
+                lbl_SearchError.Text = "Please search the category first";
+                tbx_name.Focus();
+                return;
+            }
+            Book selectedBook = (Book)lbx_unassigned_books.SelectedItem;
+            if (selectedBook != null)
+            {
+                this.currentCategory.AssignBook(selectedBook);
+                selectedBook.Category = this.currentCategory;
+                this.populateAssignedBooks();
+                this.populateUnassignedBooks();
+            }
+        }
+
+        private void btn_unassigned_book_Click(object sender, EventArgs e)
+        {
+            if (this.currentCategory == null)
+            {
+                lbl_SearchError.Text = "Please search the category first";
+                tbx_name.Focus();
+                return;
+            }
+            Book selectedBook = (Book)lbx_unassigned_books.SelectedItem;
+            if (selectedBook != null)
+            {
+                this.currentCategory.UnassignBook(selectedBook);
+                selectedBook.Category = null;
+                this.populateAssignedBooks();
+                this.populateUnassignedBooks();
+            }
+        }
+
+        private void clearAll()
+        {
+            tbx_categoryid.Text = "";
+            tbx_name.Text = "";
+            tbx_description.Text = "";
+            lbl_SearchError.Text = "";
+            lbx_assigned_books.Items.Clear();
+            lbx_unassigned_books.Items.Clear();
+            this.currentCategory = null;
+        }
+
+        private void populateAssignedBooks()
+        {
+            lbx_assigned_books.Items.Clear();
+            if (this.currentCategory.AssignedBooks.Count() <= 0)
+            {
+                // show error message
+                return;
+            }
+            foreach (Book book in this.currentCategory.AssignedBooks)
+            {
+                lbx_assigned_books.Items.Add(book);
+            }
+        }
+
+        private void populateUnassignedBooks()
+        {
+            lbx_unassigned_books.Items.Clear();
+            IEnumerable<Book> availableBooks = this.books
+                .Where((Book book) => book.Category == null)
+               .Except(this.currentCategory.AssignedBooks);
+            if (availableBooks.Count() <= 0)
+            {
+                // show error message
+                return;
+            }
+            foreach (Book book in availableBooks)
+            {
+                lbx_unassigned_books.Items.Add(book);
+            }
+        }
+
+        private Category findCategoryByName(String categoryName)
+        {
+            foreach (Category category in categories)
+            {
+                if (category.CategoryName.Equals(categoryName))
+                {
+                    return category;
+                }
+            }
+            return null;
         }
     }
 }

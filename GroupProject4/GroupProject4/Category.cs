@@ -19,6 +19,7 @@ namespace GroupProject4
             CategoryDescription = description;
             CategoryType = type; /*Fiction and Non-fiction*/
             CategoryDisplayName = displayName;
+            AssignedBooks = new List<Book>();
         }
 
         public int CategoryID { get; set; }
@@ -26,6 +27,23 @@ namespace GroupProject4
         public string CategoryDescription { get; set; }
         public string CategoryType { get; set; }
         public string CategoryDisplayName { get; set; }
+        public List<Book> AssignedBooks { get; }
+
+        public void AssignBook(Book book)
+        {
+            if (book != null && !AssignedBooks.Contains(book))
+            {
+                this.AssignedBooks.Add(book);
+            }
+        }
+        public void UnassignBook(Book book)
+        {
+            if (book != null && AssignedBooks.Contains(book))
+            {
+                this.AssignedBooks.Remove(book);
+            }
+        }
+
 
         public override string ToString()
         {

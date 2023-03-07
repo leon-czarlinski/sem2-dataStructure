@@ -13,6 +13,8 @@ namespace GroupProject4
     public partial class Form1 : Form
     {
         Form2 form2;
+        Form3 form3;
+        Form4 form4;
         HashSet<User> users;
         HashSet<Book> books;
         SortedSet<Category> categories;
@@ -20,6 +22,8 @@ namespace GroupProject4
         {
             InitializeComponent();
             form2 = new Form2(this);
+            form3 = new Form3(this);
+            form4 = new Form4(this);
             users = new HashSet<User>(new UserComparator());
             books = new HashSet<Book>(new BookComparator());
             categories = new SortedSet<Category>(new CategoryComparator());
@@ -27,20 +31,20 @@ namespace GroupProject4
 
         private void btn_form2_Click(object sender, EventArgs e)
         {
-            Object selectedItem = lbx_display.SelectedItem;
-            if (selectedItem == null) return;
-            if (selectedItem.GetType().Equals(typeof(User)))
-            {
-                User selectedUser = (User) selectedItem;
-                this.form2.Show(selectedUser, books);
-                this.Hide();
-            } else if (selectedItem.GetType().Equals(typeof(Book)))
-            {
-                // open form4 passing book
-            } else if(selectedItem.GetType().Equals(typeof(Category)))
-            {
-                // open form3 passing category
-            }
+            this.form2.Show(users, books);
+            this.Hide();
+        }
+
+        private void btn_form3_Click(object sender, EventArgs e)
+        {
+            this.form3.Show(categories, books);
+            this.Hide();
+        }
+
+        private void btn_form4_Click(object sender, EventArgs e)
+        {
+            this.form4.Show(books);
+            this.Hide();
         }
 
         private void btn_AddUser_Click(object sender, EventArgs e)
@@ -215,7 +219,7 @@ namespace GroupProject4
                 return;
             }
 
-            Book newbook = new Book(Int32.Parse(txt_bookID.Text), txt_title.Text, Int32.Parse(txt_year.Text), txt_author.Text, 
+            Book newbook = new Book(Int32.Parse(txt_bookID.Text), txt_title.Text, Int32.Parse(txt_year.Text), txt_author.Text,
                                     double.Parse(txt_price.Text));
 
             if (!books.Contains(newbook))

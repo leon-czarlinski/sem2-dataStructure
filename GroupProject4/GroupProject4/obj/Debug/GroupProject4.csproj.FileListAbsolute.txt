@@ -12,3 +12,16 @@ C:\Users\leonv\OneDrive\HUMBER\2ndSemester\ITE5231DataStructuresDesignPatterns\s
 C:\Users\leonv\OneDrive\HUMBER\2ndSemester\ITE5231DataStructuresDesignPatterns\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.Form2.resources
 C:\Users\leonv\OneDrive\HUMBER\2ndSemester\ITE5231DataStructuresDesignPatterns\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.Form3.resources
 C:\Users\leonv\OneDrive\HUMBER\2ndSemester\ITE5231DataStructuresDesignPatterns\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.Form4.resources
+C:\Users\n01550307\Downloads\sem2-dataStructure\GroupProject4\GroupProject4\bin\Debug\GroupProject4.exe.config
+C:\Users\n01550307\Downloads\sem2-dataStructure\GroupProject4\GroupProject4\bin\Debug\GroupProject4.exe
+C:\Users\n01550307\Downloads\sem2-dataStructure\GroupProject4\GroupProject4\bin\Debug\GroupProject4.pdb
+C:\Users\n01550307\Downloads\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.csprojAssemblyReference.cache
+C:\Users\n01550307\Downloads\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.Form1.resources
+C:\Users\n01550307\Downloads\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.Form2.resources
+C:\Users\n01550307\Downloads\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.Form3.resources
+C:\Users\n01550307\Downloads\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.Form4.resources
+C:\Users\n01550307\Downloads\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.Properties.Resources.resources
+C:\Users\n01550307\Downloads\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.csproj.GenerateResource.cache
+C:\Users\n01550307\Downloads\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.csproj.CoreCompileInputs.cache
+C:\Users\n01550307\Downloads\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.exe
+C:\Users\n01550307\Downloads\sem2-dataStructure\GroupProject4\GroupProject4\obj\Debug\GroupProject4.pdb

@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_form4 = new System.Windows.Forms.Button();
-            this.btn_goback = new System.Windows.Forms.Button();
             this.btn_unassigned_book = new System.Windows.Forms.Button();
             this.btn_assigned_book = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,52 +40,35 @@
             this.tbx_categoryid = new System.Windows.Forms.TextBox();
             this.tbx_name = new System.Windows.Forms.TextBox();
             this.tbx_description = new System.Windows.Forms.TextBox();
+            this.btn_GoBack = new System.Windows.Forms.Button();
+            this.lbl_SearchError = new System.Windows.Forms.Label();
+            this.btn_Search = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btn_form4
-            // 
-            this.btn_form4.Location = new System.Drawing.Point(962, 682);
-            this.btn_form4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn_form4.Name = "btn_form4";
-            this.btn_form4.Size = new System.Drawing.Size(146, 42);
-            this.btn_form4.TabIndex = 0;
-            this.btn_form4.Text = "Go to form4";
-            this.btn_form4.UseVisualStyleBackColor = true;
-            this.btn_form4.Click += new System.EventHandler(this.btn_form4_Click);
-            // 
-            // btn_goback
-            // 
-            this.btn_goback.Location = new System.Drawing.Point(28, 682);
-            this.btn_goback.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn_goback.Name = "btn_goback";
-            this.btn_goback.Size = new System.Drawing.Size(146, 42);
-            this.btn_goback.TabIndex = 1;
-            this.btn_goback.Text = "Go Back";
-            this.btn_goback.UseVisualStyleBackColor = true;
-            this.btn_goback.Click += new System.EventHandler(this.btn_form2_Click);
             // 
             // btn_unassigned_book
             // 
-            this.btn_unassigned_book.Location = new System.Drawing.Point(509, 412);
+            this.btn_unassigned_book.Location = new System.Drawing.Point(509, 465);
             this.btn_unassigned_book.Name = "btn_unassigned_book";
             this.btn_unassigned_book.Size = new System.Drawing.Size(160, 29);
             this.btn_unassigned_book.TabIndex = 25;
             this.btn_unassigned_book.Text = "Unassign Book >>";
             this.btn_unassigned_book.UseVisualStyleBackColor = true;
+            this.btn_unassigned_book.Click += new System.EventHandler(this.btn_unassigned_book_Click);
             // 
             // btn_assigned_book
             // 
-            this.btn_assigned_book.Location = new System.Drawing.Point(509, 344);
+            this.btn_assigned_book.Location = new System.Drawing.Point(509, 397);
             this.btn_assigned_book.Name = "btn_assigned_book";
             this.btn_assigned_book.Size = new System.Drawing.Size(160, 29);
             this.btn_assigned_book.TabIndex = 24;
             this.btn_assigned_book.Text = "<< Assign Book";
             this.btn_assigned_book.UseVisualStyleBackColor = true;
+            this.btn_assigned_book.Click += new System.EventHandler(this.btn_assigned_book_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 94);
+            this.label5.Location = new System.Drawing.Point(12, 147);
             this.label5.MaximumSize = new System.Drawing.Size(95, 20);
             this.label5.MinimumSize = new System.Drawing.Size(95, 20);
             this.label5.Name = "label5";
@@ -98,7 +79,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 57);
+            this.label4.Location = new System.Drawing.Point(12, 110);
             this.label4.MaximumSize = new System.Drawing.Size(95, 20);
             this.label4.MinimumSize = new System.Drawing.Size(95, 20);
             this.label4.Name = "label4";
@@ -109,7 +90,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 19);
+            this.label3.Location = new System.Drawing.Point(12, 72);
             this.label3.MaximumSize = new System.Drawing.Size(95, 20);
             this.label3.MinimumSize = new System.Drawing.Size(95, 20);
             this.label3.Name = "label3";
@@ -120,7 +101,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(702, 176);
+            this.label2.Location = new System.Drawing.Point(702, 229);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(143, 20);
             this.label2.TabIndex = 19;
@@ -129,7 +110,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 176);
+            this.label1.Location = new System.Drawing.Point(12, 229);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 20);
             this.label1.TabIndex = 18;
@@ -139,24 +120,24 @@
             // 
             this.lbx_unassigned_books.FormattingEnabled = true;
             this.lbx_unassigned_books.ItemHeight = 20;
-            this.lbx_unassigned_books.Location = new System.Drawing.Point(706, 199);
+            this.lbx_unassigned_books.Location = new System.Drawing.Point(706, 266);
             this.lbx_unassigned_books.Name = "lbx_unassigned_books";
-            this.lbx_unassigned_books.Size = new System.Drawing.Size(448, 464);
+            this.lbx_unassigned_books.Size = new System.Drawing.Size(448, 384);
             this.lbx_unassigned_books.TabIndex = 17;
             // 
             // lbx_assigned_books
             // 
             this.lbx_assigned_books.FormattingEnabled = true;
             this.lbx_assigned_books.ItemHeight = 20;
-            this.lbx_assigned_books.Location = new System.Drawing.Point(12, 199);
+            this.lbx_assigned_books.Location = new System.Drawing.Point(12, 266);
             this.lbx_assigned_books.Name = "lbx_assigned_books";
-            this.lbx_assigned_books.Size = new System.Drawing.Size(448, 464);
+            this.lbx_assigned_books.Size = new System.Drawing.Size(448, 384);
             this.lbx_assigned_books.TabIndex = 16;
             // 
             // tbx_categoryid
             // 
             this.tbx_categoryid.Enabled = false;
-            this.tbx_categoryid.Location = new System.Drawing.Point(113, 16);
+            this.tbx_categoryid.Location = new System.Drawing.Point(113, 69);
             this.tbx_categoryid.Name = "tbx_categoryid";
             this.tbx_categoryid.ReadOnly = true;
             this.tbx_categoryid.Size = new System.Drawing.Size(347, 26);
@@ -164,17 +145,15 @@
             // 
             // tbx_name
             // 
-            this.tbx_name.Enabled = false;
-            this.tbx_name.Location = new System.Drawing.Point(113, 54);
+            this.tbx_name.Location = new System.Drawing.Point(113, 107);
             this.tbx_name.Name = "tbx_name";
-            this.tbx_name.ReadOnly = true;
             this.tbx_name.Size = new System.Drawing.Size(347, 26);
             this.tbx_name.TabIndex = 27;
             // 
             // tbx_description
             // 
             this.tbx_description.Enabled = false;
-            this.tbx_description.Location = new System.Drawing.Point(113, 91);
+            this.tbx_description.Location = new System.Drawing.Point(113, 144);
             this.tbx_description.Multiline = true;
             this.tbx_description.Name = "tbx_description";
             this.tbx_description.ReadOnly = true;
@@ -182,11 +161,43 @@
             this.tbx_description.Size = new System.Drawing.Size(347, 68);
             this.tbx_description.TabIndex = 28;
             // 
+            // btn_GoBack
+            // 
+            this.btn_GoBack.Location = new System.Drawing.Point(16, 12);
+            this.btn_GoBack.Name = "btn_GoBack";
+            this.btn_GoBack.Size = new System.Drawing.Size(120, 35);
+            this.btn_GoBack.TabIndex = 29;
+            this.btn_GoBack.Text = "Go Back";
+            this.btn_GoBack.UseVisualStyleBackColor = true;
+            this.btn_GoBack.Click += new System.EventHandler(this.btn_GoBack_Click);
+            // 
+            // lbl_SearchError
+            // 
+            this.lbl_SearchError.AutoSize = true;
+            this.lbl_SearchError.ForeColor = System.Drawing.Color.Red;
+            this.lbl_SearchError.Location = new System.Drawing.Point(632, 110);
+            this.lbl_SearchError.Name = "lbl_SearchError";
+            this.lbl_SearchError.Size = new System.Drawing.Size(0, 20);
+            this.lbl_SearchError.TabIndex = 35;
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.Location = new System.Drawing.Point(466, 103);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(140, 35);
+            this.btn_Search.TabIndex = 34;
+            this.btn_Search.Text = "Search Category";
+            this.btn_Search.UseVisualStyleBackColor = true;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1166, 742);
+            this.Controls.Add(this.lbl_SearchError);
+            this.Controls.Add(this.btn_Search);
+            this.Controls.Add(this.btn_GoBack);
             this.Controls.Add(this.tbx_description);
             this.Controls.Add(this.tbx_name);
             this.Controls.Add(this.tbx_categoryid);
@@ -199,9 +210,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbx_unassigned_books);
             this.Controls.Add(this.lbx_assigned_books);
-            this.Controls.Add(this.btn_goback);
-            this.Controls.Add(this.btn_form4);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form3";
             this.Text = "Form3";
             this.ResumeLayout(false);
@@ -210,9 +219,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_form4;
-        private System.Windows.Forms.Button btn_goback;
         private System.Windows.Forms.Button btn_unassigned_book;
         private System.Windows.Forms.Button btn_assigned_book;
         private System.Windows.Forms.Label label5;
@@ -225,5 +231,8 @@
         private System.Windows.Forms.TextBox tbx_categoryid;
         private System.Windows.Forms.TextBox tbx_name;
         private System.Windows.Forms.TextBox tbx_description;
+        private System.Windows.Forms.Button btn_GoBack;
+        private System.Windows.Forms.Label lbl_SearchError;
+        private System.Windows.Forms.Button btn_Search;
     }
 }
