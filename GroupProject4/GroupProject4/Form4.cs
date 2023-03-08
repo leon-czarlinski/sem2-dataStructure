@@ -40,41 +40,17 @@ namespace GroupProject4
             String bookTitle = tbx_booktitle.Text.Trim();
             if (bookTitle.Equals(""))
             {
+                this.clearAll();
                 lbl_SearchError.Text = "Please provide the book name";
                 tbx_booktitle.Focus();
-                tbx_bookid.Text = "";
-                tbx_bookyear.Text = "";
-                tbx_bookprice.Text = "";
-                tbx_bookauthor.Text = "";
-                tbx_categoryid.Text = "";
-                tbx_categoryname.Text = "";
-                tbx_categorydesc.Text = "";
-                tbx_userid.Text = "";
-                tbx_username.Text = "";
-                tbx_useremail.Text = "";
-                tbx_userphone.Text = "";
-                lbl_BorrowedStatus.Text = "";
-                lbl_CategoryStatus.Text = "";
                 return;
             }
             this.currentBook = this.findBookByTitle(bookTitle);
             if (this.currentBook == null)
             {
+                this.clearAll();
                 lbl_SearchError.Text = "Book with title " + bookTitle + " not found";
                 tbx_booktitle.Focus();
-                tbx_bookid.Text = "";
-                tbx_bookyear.Text = "";
-                tbx_bookprice.Text = "";
-                tbx_bookauthor.Text = "";
-                tbx_categoryid.Text = "";
-                tbx_categoryname.Text = "";
-                tbx_categorydesc.Text = "";
-                tbx_userid.Text = "";
-                tbx_username.Text = "";
-                tbx_useremail.Text = "";
-                tbx_userphone.Text = "";
-                lbl_BorrowedStatus.Text = "";
-                lbl_CategoryStatus.Text = "";
                 return;
             }
 
