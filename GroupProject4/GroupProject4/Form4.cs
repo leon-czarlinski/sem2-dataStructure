@@ -42,6 +42,19 @@ namespace GroupProject4
             {
                 lbl_SearchError.Text = "Please provide the book name";
                 tbx_booktitle.Focus();
+                tbx_bookid.Text = "";
+                tbx_bookyear.Text = "";
+                tbx_bookprice.Text = "";
+                tbx_bookauthor.Text = "";
+                tbx_categoryid.Text = "";
+                tbx_categoryname.Text = "";
+                tbx_categorydesc.Text = "";
+                tbx_userid.Text = "";
+                tbx_username.Text = "";
+                tbx_useremail.Text = "";
+                tbx_userphone.Text = "";
+                lbl_BorrowedStatus.Text = "";
+                lbl_CategoryStatus.Text = "";
                 return;
             }
             this.currentBook = this.findBookByTitle(bookTitle);
@@ -49,6 +62,19 @@ namespace GroupProject4
             {
                 lbl_SearchError.Text = "Book with title " + bookTitle + " not found";
                 tbx_booktitle.Focus();
+                tbx_bookid.Text = "";
+                tbx_bookyear.Text = "";
+                tbx_bookprice.Text = "";
+                tbx_bookauthor.Text = "";
+                tbx_categoryid.Text = "";
+                tbx_categoryname.Text = "";
+                tbx_categorydesc.Text = "";
+                tbx_userid.Text = "";
+                tbx_username.Text = "";
+                tbx_useremail.Text = "";
+                tbx_userphone.Text = "";
+                lbl_BorrowedStatus.Text = "";
+                lbl_CategoryStatus.Text = "";
                 return;
             }
 
@@ -118,6 +144,11 @@ namespace GroupProject4
                 }
             }
             return null;
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

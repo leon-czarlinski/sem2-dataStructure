@@ -45,6 +45,9 @@ namespace GroupProject4
             {
                 lbl_SearchError.Text = "Please provide the user id";
                 tbx_userid.Focus();
+                tbx_useremail.Text = "";
+                tbx_username.Text = "";
+                tbx_userphone.Text = "";
                 return;
             }
             this.currentUser = this.findUserByID(Int32.Parse(userID));
@@ -52,6 +55,9 @@ namespace GroupProject4
             {
                 lbl_SearchError.Text = "User with id " + userID + " not found";
                 tbx_userid.Focus();
+                tbx_useremail.Text = "";
+                tbx_username.Text = "";
+                tbx_userphone.Text = "";
                 return;
             }
             tbx_username.Text = this.currentUser.UserFirstName + " " + this.currentUser.UserLastName;

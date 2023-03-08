@@ -24,9 +24,23 @@ namespace GroupProject4
             form2 = new Form2(this);
             form3 = new Form3(this);
             form4 = new Form4(this);
-            users = new HashSet<User>(new UserComparator());
-            books = new HashSet<Book>(new BookComparator());
-            categories = new SortedSet<Category>(new CategoryComparator());
+            users = new HashSet<User>(new UserComparator())
+            {
+                new User(1234,"Leon", "Victor", "@gmail.com", "+1234567890"),
+                new User(2345, "Susant", "Shrestha", "@hotmail.com", "+0987654321")
+            };
+
+            books = new HashSet<Book>(new BookComparator())
+            {
+                new Book(8765, "Data Structure", 2023, "Dhiraj Sachdev", 15.99),
+                new Book(9876, "Design Patterns", 2022, "Dhiraj Sachdev", 20.99)
+            };
+
+            categories = new SortedSet<Category>(new CategoryComparator())
+            {
+                new Category(56, "Learning", "Learn programming", "Non-fiction", "LEA"),
+                new Category(78, "Fantasy", "More about it", "Fiction", "FAN")
+            };
         }
 
         private void btn_form2_Click(object sender, EventArgs e)
@@ -50,6 +64,7 @@ namespace GroupProject4
         private void btn_AddUser_Click(object sender, EventArgs e)
         {
             lbl_errorUser.Text = "";
+            lbx_display.Items.Clear();
             if (string.IsNullOrWhiteSpace(txt_userID.Text) || string.IsNullOrWhiteSpace(txt_firstName.Text) ||
                 string.IsNullOrWhiteSpace(txt_lastName.Text) || string.IsNullOrWhiteSpace(txt_email.Text) ||
                 string.IsNullOrWhiteSpace(txt_phone.Text))
@@ -79,7 +94,7 @@ namespace GroupProject4
             }
             else
             {
-                lbl_errorUser.Text = "User already exists.";
+                lbl_errorUser.Text = "ID already exists.";
             }
         }
 
@@ -189,6 +204,7 @@ namespace GroupProject4
         private void btn_AddBook_Click(object sender, EventArgs e)
         {
             lbl_errorUser.Text = "";
+            lbx_display.Items.Clear();
 
             if (string.IsNullOrWhiteSpace(txt_bookID.Text) || string.IsNullOrWhiteSpace(txt_title.Text) ||
                 string.IsNullOrWhiteSpace(txt_year.Text) || string.IsNullOrWhiteSpace(txt_author.Text) ||
@@ -234,7 +250,7 @@ namespace GroupProject4
             }
             else
             {
-                lbl_errorUser.Text = "Book already exists.";
+                lbl_errorUser.Text = "ID already exists.";
             }
         }
 
@@ -345,6 +361,8 @@ namespace GroupProject4
         private void btn_addCat_Click(object sender, EventArgs e)
         {
             lbl_errorUser.Text = "";
+            lbx_display.Items.Clear();
+
             if (string.IsNullOrWhiteSpace(txt_categoryID.Text) || string.IsNullOrWhiteSpace(txt_catName.Text) ||
                 string.IsNullOrWhiteSpace(txt_catDesc.Text) || string.IsNullOrWhiteSpace(txt_catType.Text) ||
                 string.IsNullOrWhiteSpace(txt_catDisplayName.Text))
@@ -374,7 +392,7 @@ namespace GroupProject4
             }
             else
             {
-                lbl_errorUser.Text = "Category already exists.";
+                lbl_errorUser.Text = "Category Name already exists.";
             }
         }
 

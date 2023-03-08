@@ -44,6 +44,8 @@ namespace GroupProject4
             {
                 lbl_SearchError.Text = "Please provide the category name";
                 tbx_name.Focus();
+                tbx_categoryid.Text = "";
+                tbx_description.Text = "";
                 return;
             }
             this.currentCategory = this.findCategoryByName(categoryName);
@@ -51,6 +53,8 @@ namespace GroupProject4
             {
                 lbl_SearchError.Text = "Category with name " + categoryName + " not found";
                 tbx_name.Focus();
+                tbx_categoryid.Text = "";
+                tbx_description.Text = "";
                 return;
             }
             tbx_categoryid.Text = "" + this.currentCategory.CategoryID;
@@ -86,7 +90,7 @@ namespace GroupProject4
                 tbx_name.Focus();
                 return;
             }
-            Book selectedBook = (Book)lbx_unassigned_books.SelectedItem;
+            Book selectedBook = (Book)lbx_assigned_books.SelectedItem;
             if (selectedBook != null)
             {
                 this.currentCategory.UnassignBook(selectedBook);
